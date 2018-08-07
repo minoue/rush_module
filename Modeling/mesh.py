@@ -7,6 +7,8 @@ class Commands(object):
 
     commandDict = {}
 
+    # Boolean -------------------------------
+
     def _polyBooleanUnion(self):
         cmds.PolygonBooleanUnion()
     commandDict['polyBooleanUnion'] = 'polyBooleansUnion.png'
@@ -31,6 +33,8 @@ class Commands(object):
         cmds.PolygonBooleanIntersectionOptions()
     commandDict['polyBooleanIntersectionOptions'] = 'polyBooleansIntersection.png'
 
+    # Combine -------------------------------
+
     def _combinePolygons(self):
         cmds.CombinePolygons()
     commandDict['combinePolygons'] = 'polyUnite.png'
@@ -39,49 +43,49 @@ class Commands(object):
         cmds.CombinePolygonsOptions()
     commandDict['combinePolygonsOptions'] = 'polyUnite.png'
 
-    def _extractFace(self):
-        cmds.ExtractFace()
-    commandDict['extractFace'] = 'polyChipOff.png'
-
-    def _extractFaceOptions(self):
-        cmds.ExtractFaceOptions()
-    commandDict['extractFaceOptions'] = 'polyChipOff.png'
-
     def _separatePolygons(self):
         cmds.SeparatePolygon()
     commandDict['separatePolygons'] = 'polySeparate.png'
 
-    def _averageVertex(self):
-        cmds.AverageVertex()
-    commandDict['averageVertex'] = 'polyAverageVertex.png'
+    # Remesh -------------------------------
 
-    def _averageVertexOptions(self):
-        mel.eval("performPolyAverageVertex 1")
-    commandDict['averageVertexOptions'] = 'polyAverageVertex.png'
+    def _conformPolygon(self):
+        cmds.ConformPolygon()
+    commandDict['conformPolygon'] = 'menuIconPolygoons.png'
+
+    def _conformPolygonOptions(self):
+        cmds.ConformPolygonOptions()
+    commandDict['conformPolygonOptions'] = 'menuIconPolygoons.png'
 
     def _fillHole(self):
         cmds.FillHole()
     commandDict['fillHole'] = 'polyCloseBorder.png'
 
-    def _quadrangulateOptions(self):
-        cmds.QuadrangulateOptions()
-    commandDict['quadrangulateOptions'] = "polyQuad.png"
+    def _reducePolygon(self):
+        cmds.ReducePolygon()
+    commandDict['reducePolygon'] = "polyReduce.png"
+
+    def _reducePolygonOptions(self):
+        cmds.ReducePolygonOptions()
+    commandDict['reducePolygonOptions'] = "polyReduce.png"
+
+    def _smoothPolygon(self):
+        cmds.SmoothPolygon()
+    commandDict['smoothPolygon'] = "polySmooth.png"
 
     def _smoothPolygonOptions(self):
         cmds.SmoothPolygonOptions()
-    commandDict['smoothPolygonOptions'] = "polySphere.png"
+    commandDict['smoothPolygonOptions'] = "polySmooth.png"
 
     def _triangulate(self):
         cmds.Triangulate()
     commandDict['triangulate'] = "polyTriangulate.png"
 
-    def _mirrorCutPolygonGeometry(self):
-        cmds.MirrorCutPolygonGeometry()
-    commandDict['mirrorCutPolygonGeometry'] = "polyMirrorCut.png"
+    def _quadrangulateOptions(self):
+        cmds.QuadrangulateOptions()
+    commandDict['quadrangulateOptions'] = "polyQuad.png"
 
-    def _mirrorCutPolygonGeometryOptions(self):
-        cmds.MirrorCutPolygonGeometryOptions()
-    commandDict['mirrorCutPolygonGeometryOptions'] = "polyMirrorCut.png"
+    # Mirror -------------------------------
 
     def _mirrorPolygonGeometry(self):
         cmds.MirrorPolygonGeometry()
@@ -91,9 +95,21 @@ class Commands(object):
         cmds.MirrorPolygonGeometryOptions()
     commandDict['mirrorPolygonGeometryOptions'] = "polyMirrorGeometry.png"
 
+    def _mirrorCutPolygonGeometry(self):
+        cmds.MirrorCutPolygonGeometry()
+    commandDict['mirrorCutPolygonGeometry'] = "polyMirrorCut.png"
+
+    def _mirrorCutPolygonGeometryOptions(self):
+        cmds.MirrorCutPolygonGeometryOptions()
+    commandDict['mirrorCutPolygonGeometryOptions'] = "polyMirrorCut.png"
+
+    # Transfer -------------------------------
+
     def _transferAttributesOptions(self):
-        mel.eval("performTransferAttributes 1")        
+        mel.eval("performTransferAttributes 1")
     commandDict['transferAttributesOptions'] = "polyTransferAttributes.png"
+
+    # Optimize -------------------------------
 
     def _cleanupPolygon(self):
         cmds.CleanupPolygon()
@@ -102,11 +118,3 @@ class Commands(object):
     def _cleanupPolygonOptions(self):
         cmds.CleanupPolygonOptions()
     commandDict['cleanupPolygonOptions'] = "polyCleanup.png"
-
-    def _reducePolygon(self):
-        cmds.ReducePolygon()
-    commandDict['reducePolygon'] = "polyReduce.png"
-
-    def _reducePolygonOptions(self):
-        cmds.ReducePolygonOptions()
-    commandDict['reducePolygonOptions'] = "polyReduce.png"
