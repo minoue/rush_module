@@ -22,3 +22,23 @@ class Commands(object):
     def _polyBevel(self):
         cmds.polyBevel()
     commandDict['polyBevel'] = 'polyBevel.png'
+
+    # Vertex -------------------------------
+
+    def _averageVertex(self):
+        cmds.AverageVertex()
+    commandDict['averageVertex'] = 'polyAverageVertex.png'
+
+    def _averageVertexOptions(self):
+        mel.eval("performPolyAverageVertex 1")
+    commandDict['averageVertexOptions'] = 'polyAverageVertex.png'
+
+    # Face -------------------------------
+
+    def _extractFace(self):
+        cmds.ExtractFace()
+    commandDict['extractFace'] = 'polyChipOff.png'
+
+    def _extractFaceOptions(self):
+        cmds.ExtractFaceOptions()
+    commandDict['extractFaceOptions'] = 'polyChipOff.png'
